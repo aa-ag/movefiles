@@ -31,12 +31,12 @@ def rename_and_move():
     '''
     global source, destination
 
-    for count, filename in enumerate(os.listdir(source)):
-        dst = "file_" + str(count) + ".txt"
+    for filename in os.listdir(source):
+        new_name = filename.replace(".txt", "") + "_moved" + ".txt"
 
         # rename all the files
         os.rename(os.path.join(source, filename),
-                  os.path.join(destination, dst))
+                  os.path.join(destination, new_name))
 
 
 ###--- DRIVER CODE ---###
