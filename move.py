@@ -1,5 +1,6 @@
 ###--- IMPORTS ---###
 import shutil
+import os
 import settings
 
 
@@ -15,8 +16,13 @@ def shutil_move():
     '''
     global source, destination
 
-    # move source to destination
-    shutil.move(source, destination)
+    # move source file to destination directory
+    # shutil.move(source, destination)
+
+    all_files_in_given_directory = os.listdir(source)
+
+    for individual_file in all_files_in_given_directory:
+        shutil.move(os.path.join(source, individual_file), destination)
 
 
 ###--- DRIVER CODE ---###
