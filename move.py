@@ -14,8 +14,6 @@ def shutil_move():
     Using `shutil`
     '''
     global source, destination
-    # copy source to desination
-    shutil.copy(source, destination)
 
     # move source to destination
     shutil.move(source, destination)
