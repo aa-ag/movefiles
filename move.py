@@ -29,10 +29,8 @@ def rename_and_move():
     '''
      Using `rename`
     '''
-    global source, destination
-
-    for filename in os.listdir(source):
-        new_name = filename.replace(".txt", "") + "_moved" + ".txt"
+    for num, filename in enumerate(os.listdir(source)):
+        new_name = "file_" + str(num + 1) + ".txt"
 
         # rename all the files
         os.rename(os.path.join(source, filename),
